@@ -1,23 +1,47 @@
-'use strict';
+"use strict";
 
 global.$ = {
-  gulp: require('gulp'),
-  gp:   require('gulp-load-plugins')(),
-  bs:   require('browser-sync').create(),
-  del:  require('del'),
-  jrc:  require('imagemin-jpeg-recompress'),
-  ipq:  require('imagemin-pngquant'),
-  path: {
-    tasks: require('./gulp/config/tasks.js')
-  }
-}
+    path: {
+        task: require('./gulp/path/tasks.js')
+    },
+    gulp: require('gulp'),
+    browserSync: require('browser-sync').create(),
+    del: require('del')
+};
 
-$.path.tasks.forEach(function(taskPath) {
-  require(taskPath)()
-})
+$.path.task.forEach(function (taskPath) {
+    require(taskPath)();
+});
 
+$.gulp.task('dev', $.gulp.series(
+    'clean',
+    $.gulp.parallel(
+        'pug',
+        'fonts',
+        'styles:dev',
+        'img:dev',
+        'libsJS:dev',
+        'js:dev',
+        'svg'
+    )
+));
+
+$.gulp.task('build', $.gulp.series(
+    'clean',
+    $.gulp.parallel(
+        'pug',
+        'fonts',
+        'styles:build-min',
+        'img:build',
+        'libsJS:build',
+        'js:build-min',
+        'svg'
+    )
+));
 $.gulp.task('default', $.gulp.series(
-  'clean',
-  $.gulp.parallel('pug', 'sass', 'scripts:libs', 'scripts', 'fonts', 'images'),
-  $.gulp.parallel('watch', 'serve')
-))
+    'dev',
+    $.gulp.parallel(
+        'watch',
+        'serve'
+    )
+));

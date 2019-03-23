@@ -1,9 +1,7 @@
 module.exports = function() {
-  $.gulp.task('serve', function() {
-      $.bs.init({
-          server: {
-              baseDir: "./build"
-          }
-      })
-  })
-}
+    $.gulp.task('serve', function() {
+        $.browserSync.init({
+            server: './build'
+        });
+    });
+};
