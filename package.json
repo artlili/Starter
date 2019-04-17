@@ -1,7 +1,7 @@
 {
-  "name": "start-template",
-  "version": "1.1.0",
-  "description": "My start Template",
+  "name": "starter",
+  "version": "1.0.0",
+  "description": "Start template",
   "main": "index.js",
   "author": "Lili Agazadyan",
   "license": "MIT",

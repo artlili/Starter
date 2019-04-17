@@ -17,7 +17,7 @@ module.exports = function () {
                 return !/\/_/.test(file.path) && !/^_/.test(file.relative);
             }))
             .pipe(pug({
-                pretty: false
+                pretty: true
             }))
             .pipe(plumber.stop())
             .pipe($.gulp.dest('./build/'))
