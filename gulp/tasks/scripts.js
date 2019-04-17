@@ -1,4 +1,5 @@
 let uglify = require('gulp-uglify'),
+    babel  = require('gulp-babel'),
     concat = require('gulp-concat'),
     scriptsPATH = {
         "input": "./dev/static/js/",
@@ -31,12 +32,18 @@ module.exports = function () {
     $.gulp.task('js:build', () => {
         return $.gulp.src([scriptsPATH.input + '*.js',
             '!' + scriptsPATH.input + 'libs.min.js'])
+            .pipe(babel({
+                presets: ['@babel/env']
+            }))
             .pipe($.gulp.dest(scriptsPATH.ouput))
     });
 
     $.gulp.task('js:build-min', () => {
         return $.gulp.src([scriptsPATH.input + '*.js',
             '!' + scriptsPATH.input + 'libs.min.js'])
+            .pipe(babel({
+                presets: ['@babel/env']
+            }))
             .pipe(concat('main.min.js'))
             .pipe(uglify())
             .pipe($.gulp.dest(scriptsPATH.ouput))

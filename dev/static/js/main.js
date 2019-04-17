@@ -1,5 +1,10 @@
-$(document).ready(function () {
-    svg4everybody({});
-    var test = "hello"
-    console.log(test);
-});
+// $(document).ready(function () {
+//     svg4everybody({});
+// });
+
+function ready() {
+    const textLoad = 'DOM готов';
+    alert( textLoad );
+}
+
+document.addEventListener("DOMContentLoaded", ready);
