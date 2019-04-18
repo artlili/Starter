@@ -4,17 +4,21 @@ let uglify = require('gulp-uglify'),
     scriptsPATH = {
         "input": "./dev/static/js/",
         "ouput": "./build/static/js/"
-    };
+    },
+    libsJS = [
+        'node_modules/jquery/dist/jquery.min.js',
+        'node_modules/svg4everybody/dist/svg4everybody.min.js'
+    ];
 
 module.exports = function () {
     $.gulp.task('libsJS:dev', () => {
-        return $.gulp.src(['node_modules/svg4everybody/dist/svg4everybody.min.js'])
+        return $.gulp.src(libsJS)
             .pipe(concat('libs.min.js'))
             .pipe($.gulp.dest(scriptsPATH.ouput));
     });
 
     $.gulp.task('libsJS:build', () => {
-        return $.gulp.src(['node_modules/svg4everybody/dist/svg4everybody.min.js'])
+        return $.gulp.src(libsJS)
             .pipe(concat('libs.min.js'))
             .pipe(uglify())
             .pipe($.gulp.dest(scriptsPATH.ouput));
