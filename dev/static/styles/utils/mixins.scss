@@ -9,3 +9,13 @@
   ::-moz-placeholder          {@content}
   :-ms-input-placeholder      {@content}
 }
+
+@function rem($pixels, $context: $base-font-size) {
+    @if (unitless($pixels)) {
+        $pixels: $pixels * 1px;
+    }
+    @if (unitless($context)) {
+        $context: $context * 1px;
+    }
+    @return $pixels / $context * 1rem;
+}
