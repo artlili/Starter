@@ -23,10 +23,8 @@ module.exports = () => {
             max: 70,
             quality: 'medium'
           }),
-          $.pngquant({quality: [0.65, 0.7], speed: 5}),
-
-
+          $.pngquant({quality: [0.65, 0.7], speed: 5})
         ]))
-            .pipe($.gulp.dest(imgPATH.ouput));
+        .pipe($.gulp.dest(imgPATH.ouput));
     });
 };

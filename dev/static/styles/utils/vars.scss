@@ -5,17 +5,21 @@ $accent: #ff4343;
 $light: #f3f3f3;
 
 // Sizes
-$base-font-size: 14px;
+$max-mq-size: 1600;
+$base-font-size: 16;
 
+// Mq Breackpoints
 $breakpoints: (
-  "phone"       : 400px,
-  "phone-wide"  : 480px,
-  "phablet"     : 576px,
-  "tablet-small": 768px,
-  "tablet"      : 800px,
-  "tablet-wide" : 992px,
-  "desktop"     : 1200px,
-  "desktop-wide": 1440px
+  "phone"         : 400px,
+  "phone-wide"    : 480px,
+  "phablet"       : 576px,
+  "tablet-small"  : 768px,
+  "tablet"        : 800px,
+  "tablet-wide"   : 992px,
+  "desktop-small" : 1200px,
+  "desktop"       : 1440px,
+  "desktop-wide"  : 1600px,
 );
+
 
 $content-size: 1200px;

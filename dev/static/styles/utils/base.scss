@@ -4,7 +4,7 @@ html {
 
 body {
   height: 100%;
-  font-size: $base-font-size;
+  @include dynamic-text(16);
   @extend .muller;
   background: $light;
 }
