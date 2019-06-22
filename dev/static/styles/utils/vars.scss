@@ -1,21 +1,21 @@
 // Colors
 $white: #ffffff;
-$black: #000000;
+$black: #1d1d1d;
+$accent: #ff4343;
+$light: #f3f3f3;
 
 // Sizes
-$base-font-size: 16px;
+$base-font-size: 14px;
 
 $breakpoints: (
   "phone"       : 400px,
   "phone-wide"  : 480px,
-  "phablet"     : 560px,
-  "tablet-small": 640px,
-  "tablet"      : 768px,
-  "tablet-wide" : 1024px,
-  "desktop"     : 1248px,
+  "phablet"     : 576px,
+  "tablet-small": 768px,
+  "tablet"      : 800px,
+  "tablet-wide" : 992px,
+  "desktop"     : 1200px,
   "desktop-wide": 1440px
 );
 
-$content-size: 1024px;
-
-// Fonts
+$content-size: 1200px;

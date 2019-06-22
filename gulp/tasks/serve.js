@@ -1,5 +1,5 @@
-module.exports = function() {
-    $.gulp.task('serve', function() {
+module.exports = () => {
+    $.gulp.task('serve', () => {
         $.browserSync.init({
             server: './build'
         });

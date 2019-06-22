@@ -7,5 +7,6 @@ module.exports = [
     './gulp/tasks/serve',
     './gulp/tasks/styles',
     './gulp/tasks/svg',
+    './gulp/tasks/webp',
     './gulp/tasks/watch'
 ];

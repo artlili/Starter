@@ -1,10 +1,15 @@
-"use strict";
-
 global.$ = {
     path: {
         task: require('./gulp/path/tasks.js')
     },
     gulp: require('gulp'),
+    gp: require('gulp-load-plugins')(),
+    imageminJpegRecompress: require('imagemin-jpeg-recompress'),
+    pngquant: require('imagemin-pngquant'),
+    browserify: require('browserify'),
+    babelify: require('babelify'),
+    source: require('vinyl-source-stream'),
+    buffer: require('vinyl-buffer'),
     browserSync: require('browser-sync').create(),
     del: require('del')
 };
@@ -20,9 +25,9 @@ $.gulp.task('dev', $.gulp.series(
         'fonts',
         'styles:dev',
         'img:dev',
-        'libsJS:dev',
         'js:dev',
-        'svg'
+        'svg',
+        'webp'
     )
 ));
 
@@ -31,11 +36,11 @@ $.gulp.task('build', $.gulp.series(
     $.gulp.parallel(
         'pug',
         'fonts',
-        'styles:build-min',
+        'styles:build',
         'img:build',
-        'libsJS:build',
-        'js:build-min',
-        'svg'
+        'js:build',
+        'svg',
+        'webp'
     )
 ));
 $.gulp.task('default', $.gulp.series(

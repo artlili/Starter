@@ -1,14 +1,10 @@
-let imagemin = require('gulp-imagemin'),
-    imageminJpegRecompress = require('imagemin-jpeg-recompress'),
-    pngquant = require('imagemin-pngquant'),
-    cache = require('gulp-cache'),
-    imgPATH = {
+let imgPATH = {
         "input": ["./dev/static/images/**/*.{png,jpg,gif,svg}",
             '!./dev/static/images/svg/*'],
-        "ouput": "./build/static/images/"
+        "ouput": "./build/images/"
     };
 
-module.exports = function () {
+module.exports = () => {
     $.gulp.task('img:dev', () => {
         return $.gulp.src(imgPATH.input)
             .pipe($.gulp.dest(imgPATH.ouput));
@@ -16,21 +12,21 @@ module.exports = function () {
 
     $.gulp.task('img:build', () => {
         return $.gulp.src(imgPATH.input)
-            .pipe(cache(imagemin([
-                imagemin.gifsicle({interlaced: true}),
-                imagemin.jpegtran({progressive: true}),
-                imageminJpegRecompress({
-                    loops: 5,
-                    min: 70,
-                    max: 75,
-                    quality: 'medium'
-                }),
-                imagemin.svgo(),
-                imagemin.optipng({optimizationLevel: 3}),
-                pngquant({quality: '65-70', speed: 5})
-            ], {
-                verbose: true
-            })))
+        .pipe($.gp.imagemin([
+          $.gp.imagemin.gifsicle({interlaced: true}),
+          $.gp.imagemin.jpegtran({progressive: true}),
+          $.gp.imagemin.optipng({optimizationLevel: 3}),
+          $.gp.imagemin.svgo(),
+          $.imageminJpegRecompress({
+            loops: 5,
+            min: 65,
+            max: 70,
+            quality: 'medium'
+          }),
+          $.pngquant({quality: [0.65, 0.7], speed: 5}),
+
+
+        ]))
             .pipe($.gulp.dest(imgPATH.ouput));
     });
 };

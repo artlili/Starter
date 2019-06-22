@@ -1,6 +1,6 @@
-module.exports = function () {
+module.exports = () => {
     $.gulp.task('fonts', () => {
         return $.gulp.src('./dev/static/fonts/**/*.*')
-            .pipe($.gulp.dest('./build/static/fonts/'));
+            .pipe($.gulp.dest('./build/fonts/'));
     });
 };

@@ -1,1 +1,1 @@
-Стартовый шаблон Gulp + Pug + SCSS + BrowserSync
+Стартовый шаблон Gulp + Pug + SCSS + JS Modules + BrowserSync

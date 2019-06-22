@@ -1,5 +1,5 @@
-module.exports = function () {
-    $.gulp.task('watch', function () {
+module.exports = () => {
+    $.gulp.task('watch', () => {
         $.gulp.watch('./dev/pug/**/*.pug', $.gulp.series('pug'));
         $.gulp.watch('./dev/static/styles/**/*.scss', $.gulp.series('styles:dev'));
         $.gulp.watch(['./dev/static/images/general/**/*.{png,jpg,gif}',
