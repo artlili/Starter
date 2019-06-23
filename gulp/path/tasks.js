@@ -8,5 +8,6 @@ module.exports = [
     './gulp/tasks/styles',
     './gulp/tasks/svg',
     './gulp/tasks/webp',
+    './gulp/tasks/@2x',
     './gulp/tasks/watch'
 ];

@@ -27,7 +27,9 @@ $.gulp.task('dev', $.gulp.series(
         'img:dev',
         'js:dev',
         'svg',
-        'webp'
+        'webp',
+        '@2x',
+        //'@2x:jpg',
     )
 ));
 
@@ -40,7 +42,9 @@ $.gulp.task('build', $.gulp.series(
         'img:build',
         'js:build',
         'svg',
-        'webp'
+        'webp',
+        '@2x',
+        //'@2x:jpg',
     )
 ));
 $.gulp.task('default', $.gulp.series(

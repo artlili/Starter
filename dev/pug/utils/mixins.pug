@@ -10,12 +10,12 @@ mixin picture(url, alt)
 	if(url.match(/.jpg/))
 		- var url = url.replace(/.jpg/, "")
 		picture
-			source(type="image/webp", srcset="images/webp/" + url + ".webp")
-			source(type="image/jpg", srcset="images/" + url + ".jpg")
+			source(type="image/webp", srcset="images/" + url + ".webp")
+			source(type="image/jpeg", srcset="images/" + url + ".jpg")
 			img(src="images/" + url + ".jpg", alt=alt)
 	else
 		- var url = url.replace(/.png/, "")
 		picture
-			source(type="image/webp", srcset="images/webp/" + url + ".webp")
+			source(type="image/webp", srcset="images/" + url + ".webp")
 			source(type="image/png", srcset="images/" + url + ".png")
 			img(src="images/" + url + ".png", alt=alt)
