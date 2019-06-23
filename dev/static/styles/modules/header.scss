@@ -2,4 +2,16 @@
   h1 {
     @include dynamic-text(22);
   }
+  .lead {
+    width: 300px;
+    height: 300px;
+    background-image: url(../images/content/2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+
+    @media(min-resolution: 2dppx), (min-width: 1600px) {
+      background-image: url(../images/content/2@2x.jpg);
+    }
+  }
 }
